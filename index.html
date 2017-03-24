@@ -11,9 +11,9 @@
     <!--nav ..........................................................................-->
     <nav class="ts fluid horizontally large stackable borderless pointing secondary menu">
         <div class="ts narrow container">
-            <a class="item">許願牆</a>
-            <a class="item">時間網</a>
-            <a class="item">開課趣</a>
+            <a v-on="mouseover: mouseOver" class="item">許願牆</a>
+            <a v-on="mouseover: mouseOver" class="item">時間網</a>
+            <a v-on="mouseover: mouseOver" class="item">開課趣</a>
             <!--Right menu ..........................................................................-->
             <div class="right menu">
                 <div class="fitted item">
@@ -55,6 +55,16 @@
     </footer>
 </body>
 <script>
-    
+    var demo = new Vue({
+        el: '.item',
+        data: {
+            active: false
+        },
+        methods: {
+            mouseOver: function(){
+                this.active = !this.active;   
+            }
+        }
+    });
 </script>
 </html>
